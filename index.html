@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang='en'>
+	<head>
+		<meta charset='utf-8'/>
+		<!--
+			./index.html
+			Index of League sponsor list system
+			date: 2018-10-26 T00:19
+			by: Leomar Durán <https://github.com/lduran2>
+		-->
+		<title>League sponsor list system</title>
+		<script src='geopoints.js' type='text/javascript'></script>
+		<script src='sponsor-list.js' type='text/javascript'></script>
+	</head>
+	<body>
+		<h1>League sponsor list system</h1>
+
+		<!--
+			<form action='?' id='parse-stdin' method='post'>
+				<h2>Parse standard input</h2>
+				<ol>
+					<li><label>Standard input<textarea name='stdin' rows='25' cols='80'></textarea></label></li>
+					<li><button type='submit'>Parse</button></li>
+				</ol>
+			</form>
+		-->
+
+		<form action='?' id='add-a-league' method='post'>
+			<h2>Add a league to the system</h2>
+			<ol>
+				<li><label>League name<input name='league-name'/></label></li>
+				<li>
+					<fieldset>
+						<legend>Location</legend>
+						<ol>
+							<li><label>Latitude<input name='latitude'/></label></li>
+							<li><label>Longitude<input name='longitude'/></label></li>
+						</ol>
+					</fieldset>
+				</li>
+				<li><label>Price for sponsorship<input name='price'/></label></li>
+				<li><button type='submit'>Add</button>
+			</ol>
+		</form>
+		<script src='add-a-league.js' type='text/javascript'></script>
+
+		<form action='?' id='find-leagues' method='post'>
+			<h2>Find leagues to sponsor</h2>
+			<ol>
+				<li>
+					<fieldset>
+						<legend>Location</legend>
+						<ol>
+							<li><label>Latitude<input name='latitude'/></label></li>
+							<li><label>Longitude<input name='longitude'/></label></li>
+						</ol>
+					</fieldset>
+				</li>
+				<li><label>Radius in miles<input name='radius'/></label></li>
+				<li><label>Total budget<input name='budget'/></label></li>
+				<li><button type='submit'>Find</button></li>
+			</ol>
+		</form>
+		<script src='parse-stdin.js' type='text/javascript'></script>
+
+		<form action='?' id='findings' method='post'>
+			<h2>Findings</h2>
+			<ol>
+				<li>
+					<label>Teams<textarea name='teams' rows='5' cols='60' readonly></textarea></label>
+				</li>
+				<li><label>Cost<input name='cost' readonly /></label></li>
+			</ol>
+		</form>
+		<script src='find-leagues.js' type='text/javascript'></script>
+	</body>
+</html>
